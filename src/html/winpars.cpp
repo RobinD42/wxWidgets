@@ -883,4 +883,15 @@ void wxHtmlTagsModule::OnExit()
     wxHtmlWinParser::RemoveModule(this);
 }
 
+// If the html lib is dynamically loaded after the app has already started
+// (such as from wxPython) then the built-in module system will not init this
+// module.  Provide this function to do it manually.
+void wxHtmlTagsModuleInit()
+{
+    wxModule* module = new wxHtmlTagsModule;
+    wxModule::RegisterModule(module);
+    wxModule::InitializeModules();
+}
+
+
 #endif

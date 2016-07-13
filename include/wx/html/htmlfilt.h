@@ -64,7 +64,7 @@ public:
 //          filter for text/html
 //--------------------------------------------------------------------------------
 
-class wxHtmlFilterHTML : public wxHtmlFilter
+class WXDLLIMPEXP_HTML wxHtmlFilterHTML : public wxHtmlFilter
 {
     DECLARE_DYNAMIC_CLASS(wxHtmlFilterHTML)
 
@@ -74,6 +74,8 @@ class wxHtmlFilterHTML : public wxHtmlFilter
 };
 
 
+
+WXDLLIMPEXP_HTML void wxHtmlFilterModuleInit();
 
 #endif // wxUSE_HTML
 

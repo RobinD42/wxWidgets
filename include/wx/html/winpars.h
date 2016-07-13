@@ -307,6 +307,8 @@ public:
 };
 
 
+WXDLLIMPEXP_HTML void wxHtmlTagsModuleInit();
+
 #endif
 
 #endif // _WX_WINPARS_H_

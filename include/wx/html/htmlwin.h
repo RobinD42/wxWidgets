@@ -652,6 +652,9 @@ typedef void (wxEvtHandler::*wxHtmlLinkEventFunction)(wxHtmlLinkEvent&);
 #define wxEVT_COMMAND_HTML_CELL_HOVER     wxEVT_HTML_CELL_HOVER
 #define wxEVT_COMMAND_HTML_LINK_CLICKED   wxEVT_HTML_LINK_CLICKED
 
+
+WXDLLIMPEXP_HTML void wxHtmlWinModuleInit();
+
 #endif // wxUSE_HTML
 
 #endif // _WX_HTMLWIN_H_

@@ -1827,6 +1827,16 @@ public:
 
 IMPLEMENT_DYNAMIC_CLASS(wxHtmlWinModule, wxModule)
 
+// If the html lib is dynamically loaded after the app has already started
+// (such as from wxPython) then the built-in module system will not init this
+// module.  Provide this function to do it manually.
+void wxHtmlWinModuleInit()
+{
+    wxModule* module = new wxHtmlWinModule;
+    wxModule::RegisterModule(module);
+    wxModule::InitializeModules();
+}
+
 
 // This hack forces the linker to always link in m_* files
 // (wxHTML doesn't work without handlers from these files)
